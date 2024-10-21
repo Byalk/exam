@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Exam Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Layout: Left for Questions, Right for User Info -->
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <!-- Left Side: Exam Questions -->
+            <div class="col-md-8" id="exam-section">
+                <!-- Name Input Step -->
+                <div class="container" id="name-step">
+                    <h2 class="text-light my-4">👋 Здрасти Таня! Как се казваш?</h2>
+                    <input type="text" id="name-input" class="form-control form-custom py-2 fs-5 rounded-3 w-50" placeholder="Таня? Алие? 😏">
+                    <button class="btn btn-primary fs-5 mt-3" onclick="submitName()">Готово</button>
+                </div>
+
+                <!-- Avatar Selection Step -->
+                <div class="container d-none" id="avatar-step">
+                    <h2 class="text-light my-4">🐶 Какъв домашен любимец предпочиташ?</h2>
+                    <div class="avatar-selection">
+                        <img src="images/dog.jpg" class="avatar-option" onclick="selectAvatar('images/dog.jpg')">
+                        <img src="images/cat.jpg" class="avatar-option" onclick="selectAvatar('images/cat.jpg')">
+                    </div>
+                </div>
+
+                <!-- Password Protection Screen -->
+                <div class="container d-none" id="password-screen">
+                    <h2 class="test-finish my-4">Отговори правилно на въпроса преди да се покаже теста</h2>
+                    <p class="text-light fs-5">Кое е любимото място на Таня? 🙄</p>
+                    <button class="btn btn-exam me-2" onclick="checkPassword('Доспат')">Доспат</button>
+                    <button class="btn btn-exam me-2" onclick="checkPassword('Рибново')">Рибново</button>
+                    <button class="btn btn-exam" onclick="checkPassword('Сърница')">Сърница</button>
+                </div>
+
+                <!-- Exam Questions Section -->
+                <div class="container d-none" id="exam-screen">
+                    <h3>Въпрос <span id="current-question">1</span> от <span id="total-questions"></span></h3>
+                    <p id="question-text">Това е въпрос</p>
+                    <div>
+                        <button class="btn btn-exam me-2" onclick="answerQuestion('A')">Option A</button>
+                        <button class="btn btn-exam me-2" onclick="answerQuestion('B')">Option B</button>
+                        <button class="btn btn-exam" onclick="answerQuestion('C')">Option C</button>
+                    </div>
+                </div>
+
+                <!-- Results Screen -->
+                <div class="container d-none" id="results-screen">
+                    <h2 class="test-finish">Теста е завършен</h2>
+                    <p id="exam-status"></p>
+                    <ul id="results-list" class="list-group"></ul>
+                </div>
+            </div>
+
+            <!-- Right Side: User Info -->
+            <div class="col-md-4" id="user-info-section">
+                <div class="user-info text-center d-flex flex-column align-items-center">
+                    <div class="d-flex flex-column align-items-center user-avatar-name">
+                        <img id="avatar-img" src="" alt="Avatar" class="rounded-circle mb-2">
+                        <div class="h3"><span id="username"></span></div>
+                    </div>
+                    <button class="btn btn-light mt-5" onclick="resetExam()">Рестартиране</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notifications -->
+    <div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 11">
+        <div id="toast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive"
+            aria-atomic="true">
+            <div class="d-flex">
+                <div id="toast-body" class="toast-body">
+                    This is a toast message.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+body {
+    font-family: "Sofia Sans", sans-serif;
+    background-color: #111;
+}
+
+#exam-section {
+    padding: 20px;
+
+    h3 {
+        color: #a3a3a3;
+        font-size: 16px;
+    }
+
+    p {
+        color: #fff;
+        font-size: 22px;
+    }
+
+}
+
+#user-info-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #000;
+
+    .user-avatar-name {
+        img {
+            width: 80px;
+            height: 80px;
+            border: 2px solid pink;
+        }
+
+        #username {
+            color: #fff;
+        }
+    }
+}
+
+.toast {
+    position: fixed;
+    top: 1rem;
+    z-index: 1055;
+    max-width: 500px;
+    text-align: center;
+    font-size: 20px;
+
+    &.correct {
+        background-color: #28a745 !important;
+    }
+
+    &.wrong {
+        background-color: #dc3545 !important;
+    }
+}
+
+.avatar-option {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+
+    &:hover {
+        border-color: pink;
+    }
+}
+
+
+.form-custom {
+    background-color: #2f2f2f;
+    border: 1px solid #4d4d4d;
+    color: pink !important;
+
+    &:hover {
+        border-color: pink;
+    }
+
+    &:focus,
+    &:active {
+        border-color: pink;
+        background-color: #2f2f2f;
+        box-shadow: none;
+    }
+
+    &::placeholder {
+        color: #ccc
+    }
+}
+
+.btn-primary {
+    background-color: pink;
+    border-color: pink;
+    color: #000;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: transparent !important;
+        border-color: pink !important;
+        color: pink !important;
+    }
+}
+
+.btn-exam {
+    background-color: #2f2f2f !important;
+    border: 1px solid #4d4d4d;
+    color: #fff !important;
+
+    &:hover {
+        border-color: pink;
+        color: pink !important;
+    }
+}
+
+.btn-exam.btn-success {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+
+    &:hover {
+        border-color: #198754;
+        color: #fff !important;
+    }
+}
+
+.question-result {
+    color: #ccc;
+    border-radius: 5px;
+    border-color: rgba(255, 255, 255, .2) !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: #fff;
+        border-color: rgba(255, 255, 255, .5) !important;
+    }
+
+    .question-details {
+        border-top: 1px solid rgba(255, 255, 255, .1);
+        padding-top: 20px;
+
+        .options-buttons {
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 0;
+            font-size: 18px !important;
+        }
+    }
+}
+
+.test-finish {
+    color: #a3a3a3;
+    font-size: 16px;
+}
+
+#exam-status {
+    color: #fff;
+    font-size: 22px;
+}
